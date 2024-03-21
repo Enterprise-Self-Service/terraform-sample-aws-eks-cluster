@@ -14,5 +14,5 @@ output "cluster_name" {
 }
 
 output "cluster_certificate_authority_data" {
-  value = base64decode(module.eks.cluster_certificate_authority_data.0.data)
+  value = base64decode(module.eks.cluster.certificate_authority.0.data)
 }
