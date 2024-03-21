@@ -17,5 +17,5 @@ output "cluster_name" {
 }
 
 output "kubeconfig-certificate-authority-data" {
-  value = module.eks.certificate_authority[0].data
+  value = base64decode(module.eks.cluster_certificate_authority_data)
 }
