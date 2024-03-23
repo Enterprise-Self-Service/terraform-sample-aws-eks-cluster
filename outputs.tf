@@ -1,3 +1,6 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
 output "cluster_endpoint" {
   description = "Endpoint for EKS control plane"
   value       = module.eks.cluster_endpoint
@@ -13,6 +16,6 @@ output "cluster_name" {
   value       = module.eks.cluster_name
 }
 
-output "cluster_certificate_authority_data" {
-  value = base64decode(module.eks.certificate_authority.0.data)
+output "kubeconfig-certificate-authority-data" {
+  value = base64decode(module.eks.cluster_certificate_authority_data)
 }
